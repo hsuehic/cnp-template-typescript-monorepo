@@ -1,4 +1,3 @@
-
 // This file defines our configuration for Markdownlint. See
 // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 // for more details on each rule.
@@ -22,7 +21,7 @@
       "allow_different_nesting": true
     },
     "single-title": {
-      "front_matter_title": "^\s*title\s*[:=]"
+      "front_matter_title": "^\\s*title\\s*[:=]"
     },
     "no-trailing-punctuation": {
       "punctuation": ".,;:"
@@ -140,10 +139,24 @@
           "searchScope": "text"
         },
         {
+          "name": "nbsp",
+          "message": "Don't use no-break spaces",
+          "searchPattern": "/ /g",
+          "replace": " ",
+          "searchScope": "all"
+        },
+        {
           "name": "m-dash",
           "message": "Don't use '--'. Use m-dash — instead",
           "search": " -- ",
           "replace": " — ",
+          "searchScope": "text"
+        },
+        {
+          "name": "relative-link",
+          "message": "Internal links should start with '/'",
+          "searchPattern": "/([\\(\"])en-US\\/docs/g",
+          "replace": "$1/en-US/docs",
           "searchScope": "text"
         },
         {
@@ -156,14 +169,14 @@
         {
           "name": "double-spaces",
           "message": "Avoid double spaces",
-          "searchPattern": "/([^\s>])  ([^\s|])/g",
+          "searchPattern": "/([^\\s>])  ([^\\s|])/g",
           "replace": "$1 $2",
           "searchScope": "text"
         },
         {
           "name": "stuck-definition",
           "message": "Character is stuck to definition description marker",
-          "searchPattern": "/- :(\w)/g",
+          "searchPattern": "/- :(\\w)/g",
           "replace": "- : $1",
           "searchScope": "text"
         },
@@ -177,7 +190,7 @@
         {
           "name": "localhost-links",
           "message": "Don't use localhost for links",
-          "searchPattern": "/\]\(https?:\/\/localhost:\d+\//g",
+          "searchPattern": "/\\]\\(https?:\\/\\/localhost:\\d+\\//g",
           "replace": "](/",
           "searchScope": "text"
         }

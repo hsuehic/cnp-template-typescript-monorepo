@@ -1,11 +1,12 @@
-# typescript-npm-package-template
+<!--instructions-of-template--># cnp-template-typescript
 
-> Template to kickstart creating a Node.js module using TypeScript and VSCode
+> Template to kickstart creating a Node.js module using TypeScript and VSCode, used by [create-npm-packages](https://github.com/hsuehic/create-npm-packages#create-npm-packages)
 
 Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate)
 
 ## Features
 
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
 - [Changesets](https://github.com/changesets/changesets)
 - [Issue Templates](https://github.com/hsuehic/typescript-npm-package-template/tree/main/.github/ISSUE_TEMPLATE)
 - [GitHub Actions](https://github.com/hsuehic/typescript-npm-package-template/tree/main/.github/workflows)
@@ -27,17 +28,7 @@ Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-modul
 Alternatively, create a new directory and then run:
 
 ```bash
-curl -fsSL https://github.com/hsuehic/typescript-npm-package-template/archive/main.tar.gz | tar -xz --strip-components=1
-```
-
-Replace `FULL_NAME`, `GITHUB_USER`, and `REPO_NAME` in the script below with your own details to personalize your new package:
-
-```bash
-FULL_NAME="John Smith"
-GITHUB_USER="johnsmith"
-REPO_NAME="my-cool-package"
-sed -i.mybak "s/\([\/\"]\)(hsuehic)/$GITHUB_USER/g; s/typescript-npm-package-template\|my-package-name/$REPO_NAME/g; s/Ryan Sonshine/$FULL_NAME/g" package.json package-lock.json README.md
-rm *.mybak
+npx create-npm-packages --template husehic/cnp-template-typescript --github-username=xxx
 ```
 
 ### Add NPM Token
@@ -51,15 +42,18 @@ Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
 **Remove everything from here and above**
 
 ---
+<!--instructions-of-template-->
 
-# my-package-name
+# <!--package-name-->my-package-name<!--package-name-->
 
 [![npm package][npm-img]][npm-url]
-[![Build Status][build-img]][build-url]
 [![Downloads][downloads-img]][downloads-url]
+[![Lint Status][lint-img]][lint-url]
+[![Test Status][test-img]][test-url]
+[![Build Status][build-img]][build-url]
+[![Release Status][release-img]][release-url]
 [![Issues][issues-img]][issues-url]
 [![Code Coverage][codecov-img]][codecov-url]
-[![Commitizen Friendly][commitizen-img]][commitizen-url]
 
 > My awesome module
 
@@ -99,13 +93,21 @@ Default: `rainbows`
 
 Lorem ipsum.
 
-[build-img]:https://github.com/hsuehic/typescript-npm-package-template/actions/workflows/release.yml/badge.svg
-[build-url]:https://github.com/hsuehic/typescript-npm-package-template/actions/workflows/release.yml
-[downloads-img]:https://img.shields.io/npm/dt/typescript-npm-package-template
-[downloads-url]:https://www.npmtrends.com/typescript-npm-package-template
-[npm-img]:https://img.shields.io/npm/v/typescript-npm-package-template
-[npm-url]:https://www.npmjs.com/package/typescript-npm-package-template
-[issues-img]:https://img.shields.io/github/issues/hsuehic/typescript-npm-package-template
-[issues-url]:https://github.com/hsuehic/typescript-npm-package-template/issues
-[codecov-img]:https://codecov.io/gh/hsuehic/typescript-npm-package-template/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh/hsuehic/typescript-npm-package-template
+<!--badge-variables-->
+[lint-img]: https://github.com/hsuehic/cnp-template-typescript/actions/workflows/lint.yaml/badge.svg
+[lint-url]: https://github.com/hsuehic/cnp-template-typescript/workflows/lint.yaml
+[test-img]: https://github.com/hsuehic/cnp-template-typescript/actions/workflows/test.yaml/badge.svg
+[test-url]: https://github.com/hsuehic/cnp-template-typescript/workflows/test.yaml
+[build-img]: https://github.com/hsuehic/cnp-template-typescript/actions/workflows/build.yaml/badge.svg
+[build-url]: https://github.com/hsuehic/cnp-template-typescript/workflows/build.yaml
+[release-img]: https://github.com/hsuehic/cnp-template-typescript/actions/workflows/release.yaml/badge.svg
+[release-url]: https://github.com/hsuehic/cnp-template-typescript/workflows/release.yaml
+[downloads-img]: https://img.shields.io/npm/dt/cnp-teamplate-typescript
+[downloads-url]: https://www.npmtrends.com/cnp-teamplate-typescript
+[npm-img]: https://img.shields.io/npm/v/cnp-template-typescript
+[npm-url]: https://www.npmjs.com/package/cnp-template-typescript
+[issues-img]: https://img.shields.io/github/issues/hsuehic/cnp-template-typescript
+[issues-url]: https://github.com/hsuehic/cnp-template-typescript/issues
+[codecov-img]: https://codecov.io/gh/hsuehic/cnp-template-typescript/branch/main/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/hsuehic/cnp-template-typescript
+<!--badge-variables-->
