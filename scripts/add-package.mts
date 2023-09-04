@@ -10,7 +10,7 @@ const PACKAGE_JSON_FIELDS = [
   'homepage',
   'repository.type',
   'repository.url',
-];
+] as const;
 
 const init = async () => {
   if (process.argv.length < 3) {
@@ -30,12 +30,19 @@ const init = async () => {
   cd(PACKAGE_DIR);
 
   await $`npm pkg set name=${PACKAGE_NAME} -ws=false`;
-  const setPromises = PACKAGE_JSON_FIELDS.map(async key => {
+  // can't modify the package.json at the same time using different process(shell script)
+  // const setPromises = PACKAGE_JSON_FIELDS.map(async key => {
+  //   await $`npm pkg set ${key}=${
+  //     packageJsonFieldsValues.get(key) as string
+  //   } -ws=false`;
+  // });
+  // await Promise.all(setPromises);
+  for (const key of PACKAGE_JSON_FIELDS) {
+    // eslint-disable-next-line no-await-in-loop
     await $`npm pkg set ${key}=${
       packageJsonFieldsValues.get(key) as string
     } -ws=false`;
-  });
-  await Promise.all(setPromises);
+  }
 };
 
 await init();
