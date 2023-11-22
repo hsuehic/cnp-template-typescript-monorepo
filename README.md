@@ -1,4 +1,5 @@
 <!--instructions-of-template-->
+
 # cnp-template-typescript-monorepo
 
 > Template to kickstart creating a Node.js module using TypeScript and VSCode, used by [create-npm-packages](https://github.com/hsuehic/create-npm-packages#create-npm-packages)
@@ -40,9 +41,10 @@ Add your npm token to your GitHub repository secrets as `NPM_TOKEN`.
 
 Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
 
-**Remove everything from here and above**
+> Remove everything from here and above
 
 ---
+
 <!--instructions-of-template-->
 
 # <!--package-name-->my-package-name<!--package-name-->
@@ -95,6 +97,7 @@ Default: `rainbows`
 Lorem ipsum.
 
 <!--badge-variables-->
+
 [lint-img]: https://github.com/hsuehic/cnp-template-typescript-monorepo/actions/workflows/lint.yaml/badge.svg
 [lint-url]: https://github.com/hsuehic/cnp-template-typescript-monorepo/workflows/lint.yaml
 [test-img]: https://github.com/hsuehic/cnp-template-typescript-monorepo/actions/workflows/test.yaml/badge.svg
@@ -111,4 +114,5 @@ Lorem ipsum.
 [issues-url]: https://github.com/hsuehic/cnp-template-typescript-monorepo/issues
 [codecov-img]: https://codecov.io/gh/hsuehic/cnp-template-typescript-monorepo/branch/main/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/hsuehic/cnp-template-typescript-monorepo
+
 <!--badge-variables-->
